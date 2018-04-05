@@ -1,0 +1,43 @@
+
+<section id="awards">
+
+	{{#each awards.list}}
+		<div class="award item-list">
+			
+			<div class="title">
+				
+				
+
+				
+					
+				 
+				{{#isnotlinkandimage award_image text_link link}}
+					<div class='title' >{{award_title}}</div>
+				{{else}}
+					{{#islistnotexternallink award_image text_link link}}
+					<a class='title' href="/obra/awards/{{@index}}" href-index='/obra/awards'>{{award_title}}</a>
+					{{/islistnotexternallink}}
+
+					{{#islistexternallink award_image text_link link}}
+						<a class='title' href="{{link}}" target='_blank' class='external' href-index='/obra/awards'>{{award_title}}</a>
+					{{/islistexternallink}}
+				{{/isnotlinkandimage}}
+				
+				
+				
+ 
+				</div>
+			<div class="content"> 
+				{{#if award_image}}
+						<div style='line-height:0'>
+						<img style='max-width:{{award_image.width}}px;width:100%'src="{{>image_base}}{{award_image.file}}" alt="">
+						</div>
+				{{/if}}
+
+				{{#if link}}
+					<a href="{{link}}" class='external external-link' target='_blank'>{{text_link}}</a>
+				{{/if}}
+			</div> 
+		</div>
+	{{/each}} 
+</section>

@@ -1,0 +1,28 @@
+
+<div class="detail">
+	<div class="content">
+		<div class="desktop-only">
+			{{#if detail.extended.images}}
+				<div slider>
+					{{json detail.extended.images}}
+				</div>
+			{{/if}}
+		</div>
+		
+		<div class="smartphone-only">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        {{#each detail.extended.images}}
+			        <div class="swiper-slide">
+			        	<img src="{{>image_base}}{{image.file}}" alt="" width='100%'>
+			        </div>
+			        {{/each}}
+			    </div>
+			</div>
+		</div>
+
+		<div class="description">
+			{{{detail.post_content}}}
+		</div>
+	</div>
+</div>

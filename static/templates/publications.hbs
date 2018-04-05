@@ -1,0 +1,39 @@
+
+<section id="publications">
+
+	{{#each publications.list}}
+		<div class="publication item-list">
+			
+				
+
+				{{#isnotlinkandimage publication_image text_link link}}
+					<div class='title' >{{publication_title}}</div>
+				{{else}}
+					{{#islistnotexternallink publication_image text_link link}}
+					<a class='title' href="/obra/publications/{{@index}}" href-index='/obra/publications'>{{publication_title}}</a>
+					{{/islistnotexternallink}}
+
+					{{#islistexternallink publication_image text_link link}}
+						<a class='title' href="{{link}}" target='_blank' class='external' href-index='/obra/publications'>{{publication_title}}</a>
+					{{/islistexternallink}}
+				{{/isnotlinkandimage}}
+				
+
+			
+
+				<div class="content">
+					{{#if publication_image}}
+						<div style='line-height:0'>
+							<a href='/obra/publications'><img style='max-height:460px;max-width:{{publication_image.width}}px;'src="{{>image_base}}{{publication_image.file}}" alt=""></a>
+							</div>
+
+					{{/if}}
+					
+					{{#if text_link}}
+						<a href="{{link}}" class='external external-link' target='_blank'>{{text_link}}</a>
+					{{/if}}
+
+				</div>
+		</div>
+	{{/each}} 
+</section>

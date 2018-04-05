@@ -1,0 +1,28 @@
+
+<section id="lectures">
+
+	{{#each lectures.list}}
+		<div class="lecture item-list"> 
+			
+			<div class="title">
+				
+					{{#if lecture_description}}
+						<a href="/obra/lectures/{{@index}}" href-index='/obra/lectures'>
+				
+							{{lecture_title}}
+						</a>
+					{{else}}
+						{{lecture_title}}
+					{{/if}}
+				
+				
+ 
+				</div>
+			<div class="content">
+				<a href="/obra/lectures/" style='text-decoration: none'>
+				{{{lecture_description}}}
+				</a>
+			</div> 
+		</div>
+	{{/each}} 
+</section>

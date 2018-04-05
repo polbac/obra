@@ -1,0 +1,22 @@
+<aside id='events'>
+	{{#each events}}
+		<div class="event">
+			
+			{{date}}<br>
+			{{{post_content}}}
+			{{#if image}}
+				<img style='margin-top:32px;max-width:{{image.width}}px;width:100%'src="{{>image_base}}{{image.file}}" alt="">
+			{{/if}}
+			{{#if video_embebed}} 
+				
+				<div class="video-video-wrapper">
+					<div class="videoWrapper">
+
+					{{{video_embebed}}}
+					</div> 
+				</div>
+ 
+			{{/if}}
+		</div>
+	{{/each}}
+</aside>
